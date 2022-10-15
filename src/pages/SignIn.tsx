@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { Envelope, Lock } from 'phosphor-react';
 import { useState } from 'react';
 import { Button } from '../components/Button';
@@ -12,6 +13,10 @@ export function SignIn() {
 
     function handleSignIn() {
         event?.preventDefault()
+        axios.post('/sections', {
+            email: 'rafael@dev.test',
+            password: '12345678'
+        })
         setIsUserSignedIn(true)
     }
 
